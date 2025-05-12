@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Wall</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Serif', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f5f0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2c3e50, #4a6491);
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1.5rem 0 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav li {
+      margin: 0 1.2rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f8d56b;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #f8d56b;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .wall {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2.5rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .wall h2 {
+      font-size: 2rem;
+      color: #4a6491;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .proverb-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    label {
+      font-size: 1.1rem;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Noto Serif', serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #4a6491;
+      box-shadow: 0 0 0 2px rgba(74, 100, 145, 0.2);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #4a6491;
+      color: white;
+      border: none;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Noto Serif', serif;
+    }
+
+    button:hover {
+      background-color: #3a5479;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      
+      .wall {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+      }
+      
+      .wall h2 {
+        font-size: 1.8rem;
+      }
+      
+      nav li {
+        margin: 0 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+      
+      nav a {
+        font-size: 0.9rem;
+      }
+      
+      .wall h2 {
+        font-size: 1.5rem;
+      }
+      
+      input, textarea, button {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Afghan Proverbs</h1>
+    <p class="subtitle">Interactive Wall</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="wall.html"> Wall</a></li>
+        <li><a href="detail.html">Interactive </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="wall">
+    <h2>Submit Your Proverb</h2>
+    <form class="proverb-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="proverb">Your Proverb:</label>
+      <textarea id="proverb" name="proverb" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+</body>
+</html>
